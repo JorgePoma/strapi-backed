@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publications",
+  "info": {
+    "singularName": "publicacions",
+    "pluralName": "publications",
+    "displayName": "Publication"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "imagen": {
+      "type": "string",
+      "default": "https://impomarejo.com/uploads/sin_imagen.png"
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "deporte",
+        "salud",
+        "entretenimiento",
+        "comida",
+        "viaje",
+        "comedia",
+        "educación",
+        "NSFW",
+        "hogar",
+        "vacaciones",
+        "naturaleza",
+        "videojuegos"
+      ]
+    },
+    "estrellas": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "publications"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "guardados"
+    }
+  }
+}

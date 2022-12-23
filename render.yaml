@@ -40,7 +40,7 @@ services:
     # Update the following line with your Remix GitHub repo
     repo: https://github.com/JorgePoma/Galebox
     branch: master
-    buildCommand: cd Galebox && npm install && npm run build
+    buildCommand: cd Galebox && npm install && npm run build:prod
     startCommand: cd Galebox/www
     envVars:
       - key: STRAPI_URL_BASE

@@ -12,6 +12,9 @@ module.exports = [
           upgradeInsecureRequests: null,
         },
       },
+      frameguard: {
+        action: "sameorigin",
+      },
     },
   },
   "strapi::cors",
